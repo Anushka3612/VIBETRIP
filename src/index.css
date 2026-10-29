@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Text Size scaling for Accessibility */
+html.font-size-sm {
+  font-size: 14.5px;
+}
+html.font-size-md {
+  font-size: 16px;
+}
+html.font-size-lg {
+  font-size: 18px;
+}
+
+/* High Contrast Theme overrides */
+html.theme-high-contrast {
+  --tw-border-opacity: 1;
+}
+
+html.theme-high-contrast body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.theme-high-contrast .contrast-card {
+  background-color: #0a0a0a !important;
+  border: 2px solid #ffff00 !important;
+  color: #ffffff !important;
+}
+
+html.theme-high-contrast .contrast-border {
+  border-color: #ffff00 !important;
+}
+
+html.theme-high-contrast .contrast-accent {
+  color: #ffff00 !important;
+}
+
+html.theme-high-contrast .contrast-button {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Accessibility Focus Ring */
+*:focus-visible {
+  outline: 2px solid #0d9488 !important;
+  outline-offset: 2px !important;
+}
+
+html.theme-high-contrast *:focus-visible {
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 3px !important;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Stylesheet for PDF Export */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-page-break {
+    page-break-before: always;
+  }
+
+  .print-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  a {
+    text-decoration: underline !important;
+  }
+}

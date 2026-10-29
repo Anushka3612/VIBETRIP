@@ -1,0 +1,6 @@
+{
+  "name": "VibeTrip - AI Trip Planner",
+  "description": "AI trip planner that turns any mood or vibe into a complete, realistic, editable itinerary with budget breakdown, seasonal travel alerts, and interactive maps.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
